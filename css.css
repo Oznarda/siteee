@@ -43,7 +43,7 @@
 		/*	Legacy fix for older browsers	*/
 
 #mbOverlay.mbOverlayOpaque {
-	background: transparent url(/images/80.png) repeat;
+	background: transparent url(images/80.png) repeat;
 }
 
 #mbOverlay.mbOverlayAbsolute {
@@ -69,7 +69,7 @@
 }
 
 #mbCenter.mbLoading {
-	background: #000 url(/images/mediabox/MinimalLoading.gif) no-repeat center;
+	background: #000 url(images/mediabox/MinimalLoading.gif) no-repeat center;
 /*	This style is applied only during animation.	*/
 /*	For example, the next lines turn off shadows	*/
 /*	improving browser performance on slow systems.	*/
