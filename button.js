@@ -6,6 +6,14 @@ function r_degistir (isim,y_img)  {
  }
 
 var siteRefreshStyles = document.createElement("link");
+var viewportMeta = document.querySelector('meta[name="viewport"]');
+if (!viewportMeta) {
+        viewportMeta = document.createElement("meta");
+        viewportMeta.name = "viewport";
+        viewportMeta.content = "width=device-width, initial-scale=1";
+        document.head.appendChild(viewportMeta);
+}
+
 siteRefreshStyles.rel = "stylesheet";
 siteRefreshStyles.href = "site-refresh.css";
 document.head.appendChild(siteRefreshStyles);
