@@ -26,5 +26,12 @@ anylinkmenu5_3.items=[
 	["Food Processor Robot Knife Grinding Machine", "makina5-en.html"],
 	["Spoon Fork And Knife Polishing Machine", "makina6-en.html"], 
 	["Tea Plate Polishing Machine", "makina7-en.html"],
-	["Saucepan Edge Cutting Machine", "makina8-en.html"]//no comma following last entry!
+	["Saucepan Edge Cutting Machine", "makina8-en.html"],
+	["Bushing Press-Fitting Machine", "makina9-en.html"],
+	["Saucepan Interior Sanding Machine", "makina10-en.html"],
+	["Cam Cylinder Knife Crushing Machine", "makina11-en.html"],
+	["Deep Saucepan Interior Sanding Machine", "makina12-en.html"],
+	["Saucepan Base Bonding Machine", "makina13-en.html"],
+	["Dough Kettle Pattern Machine", "makina14-en.html"]
+	//no comma following last entry!
 ]

@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var currentFile = decodeURIComponent(window.location.pathname.split("/").pop() || "index.html");
         var isEnglish = /-en\.html$/i.test(currentFile);
         var baseFile = currentFile.replace(/-en\.html$/i, ".html");
-        var pairedPages = /^(index|kirikmakina|iletisim|referanslar|makina[1-8])\.html$/i;
+        var pairedPages = /^(index|kirikmakina|iletisim|referanslar|makina[1-9]|makina1[0-4]|urunler)\.html$/i;
         var turkishPage = isEnglish ? baseFile : currentFile;
         var englishPage = isEnglish ? currentFile : (pairedPages.test(currentFile) ? currentFile.replace(/\.html$/i, "-en.html") : "index-en.html");
         var labels = isEnglish
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 '<nav id="site-navigation" class="site-nav" aria-label="Primary navigation">' +
                 '<a href="' + (isEnglish ? "index-en.html" : "index.html") + '">' + labels.home + '</a>' +
                 '<a href="' + (isEnglish ? "kirikmakina-en.html" : "kirikmakina.html") + '">' + labels.company + '</a>' +
-                '<details><summary>' + labels.products + '</summary><div class="site-products-menu"></div></details>' +
+                '<a href="' + (isEnglish ? "urunler-en.html" : "urunler.html") + '">' + labels.products + '</a>' +
                 '<a href="' + (isEnglish ? "referanslar-en.html" : "referanslar.html") + '">' + labels.references + '</a>' +
                 '<a href="' + (isEnglish ? "iletisim-en.html" : "iletisim.html") + '">' + labels.contact + '</a>' +
                 '</nav><div class="site-language" aria-label="Language">' +
@@ -57,22 +57,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
         }
 
-        var productList = header.querySelector(".site-products-menu");
-        function populateProductMenu() {
-                var productMenu = isEnglish ? window.anylinkmenu5_3 : window.anylinkmenu4_3;
-                if (!productList.childElementCount && productMenu && productMenu.items) {
-                        productMenu.items.forEach(function (item) {
-                        var link = document.createElement("a");
-                        link.href = item[1];
-                        link.textContent = item[0];
-                        productList.appendChild(link);
-                        });
-                }
-        }
-        populateProductMenu();
-        header.querySelector(".site-nav details").addEventListener("toggle", populateProductMenu);
-        window.addEventListener("load", populateProductMenu, { once: true });
-
         var languageMap = document.querySelector('map[name="home_ust"]');
         if (languageMap) {
                 var languageAreas = languageMap.querySelectorAll("area");
@@ -86,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         header.querySelectorAll(".site-nav > a").forEach(function (link) {
-                if (link.getAttribute("href") === currentFile) link.setAttribute("aria-current", "page");
+                if (link.getAttribute("href") === currentFile || (/^makina\d+(-en)?\.html$/i.test(currentFile) && /^urunler/.test(link.getAttribute("href")))) link.setAttribute("aria-current", "page");
         });
 
         var menuToggle = header.querySelector(".site-menu-toggle");
